@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar/Navbar";
 import './App.css'
 import Intro from "./components/Navbar/Intro/Intro";
-import floatingDiv from "./components/FloatingDiv/FloatingDiv";
+import FloatingDiv from "./components/FloatingDiv/FloatingDiv";
 import Services from "./components/Services/Services";
 import Experience from "./components/Experience/Experience";
 import Works from "./components/Works/Works";
@@ -23,7 +23,7 @@ function App() {
     >
       <Navbar/>
       <Intro/>
-      <floatingDiv/>
+      <FloatingDiv/>
       <Services/>
       <Experience/>
       <Works/>
