@@ -1,17 +1,15 @@
 import React from "react";
 import "./Testimonial.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import necessary modules for Swiper
 import { Pagination } from "swiper/modules";
-import "swiper/css/pagination"; // Import Swiper pagination styles
 import profilepic1 from "../../img/profile1.jpg";
 import profilepic2 from "../../img/profile2.jpg";
 import profilepic3 from "../../img/profile3.jpg";
 import profilepic4 from "../../img/profile4.jpg";
-
-const Testimonial = () => {
-  // Array of client data
+import 'swiper/css/pagination'
+import 'swiper/css'
+  // Array of client data//
+  const Testimonial = () => {
   const clients = [
     {
       img: profilepic1,
@@ -33,10 +31,9 @@ const Testimonial = () => {
       review:
         "lorem ispum dolor sit amet consectetur adipisicing elit. Quod itaque aperiam quos eaque quasi quas exercitationem",
     },
-  ];
-
-  return (
-    <div className="t-wrapper">
+  ]
+  return(
+    <div className="t-wrapper" id="Testimonials">
       <div className="t-heading">
         {/* Heading for the testimonials section */}
         <span>Clients always get</span>
@@ -51,24 +48,23 @@ const Testimonial = () => {
       </div>
       {/* Swiper component for the testimonials */}
       <Swiper
-        modules={[Pagination]} // Include the Pagination module
-        slidesPerView={1} // Number of slides per view
-        pagination={{ clickable: true }} // Make pagination clickable
+        modules={[Pagination]}
+        slidesPerView={1}
+        pagination={{clickable: true}}
       >
-        {/* Mapping through the clients array to create Swiper slides */}
-        {clients.map((client, index) => {
-          return (
-            <SwiperSlide key={index}>
-              {/* Display client's image */}
-              <img src={client.img} alt="" />
-              {/* Display client's review */}
-              <span>{client.review}</span>
-            </SwiperSlide>
-          );
-        })}
+          {clients.map((client, index)=>{
+            return(
+              <SwiperSlide key={index}>
+                <div className="testimonial">
+                  <img src={client.img} alt="" />
+                    <span>{client.review}</span>
+                    </div>
+              </SwiperSlide>
+            )
+          })}
+
       </Swiper>
     </div>
   );
-};
-
+     };
 export default Testimonial;
